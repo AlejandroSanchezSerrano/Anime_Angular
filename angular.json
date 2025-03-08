@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/prueba-ruting",
+            "outputPath": "dist/Anime_Angular",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "prueba-ruting:build:production"
+              "buildTarget": "Anime_Angular:build:production"
             },
             "development": {
-              "buildTarget": "prueba-ruting:build:development"
+              "buildTarget": "Anime_Angular:build:development"
             }
           },
           "defaultConfiguration": "development"
