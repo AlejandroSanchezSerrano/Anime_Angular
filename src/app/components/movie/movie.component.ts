@@ -4,13 +4,14 @@ import { FormsModule } from '@angular/forms'; // Importar FormsModule para ngMod
 import { JikanService } from '../../services/jikan.service';
 import { Movie } from '../../interfaces/movie';
 import { RespuestaMovie } from '../../interfaces/respuesta-movie';
+import { DateF } from '../../pipes/dateF.pipe';
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './movie.component.html',
   styleUrls: ['./movie.component.css'],
   standalone: true,
-  imports: [CommonModule, FormsModule] // Agregar FormsModule para usar ngModel
+  imports: [CommonModule, FormsModule, DateF] // Agregar FormsModule para usar ngModel
 })
 export class MovieComponent implements OnInit {
   movies: Movie[] = [];

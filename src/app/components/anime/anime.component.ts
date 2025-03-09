@@ -4,13 +4,14 @@ import { FormsModule } from '@angular/forms'; // Importar FormsModule para ngMod
 import { JikanService } from '../../services/jikan.service';
 import { Anime } from '../../interfaces/anime';
 import { RespuestaAnime } from '../../interfaces/respuesta-anime';
+import { DateF } from '../../pipes/dateF.pipe';
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './anime.component.html',
   styleUrls: ['./anime.component.css'],
   standalone: true,
-  imports: [CommonModule, FormsModule] // Agregar FormsModule para usar ngModel
+  imports: [CommonModule, FormsModule, DateF] // Agregar FormsModule para usar ngModel
 })
 export class AnimeComponent implements OnInit {
   animes: Anime[] = [];

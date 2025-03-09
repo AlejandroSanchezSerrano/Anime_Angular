@@ -4,13 +4,14 @@ import { FormsModule } from '@angular/forms'; // Importar FormsModule para ngMod
 import { JikanService } from '../../services/jikan.service';
 import { Manga } from '../../interfaces/manga';
 import { RespuestaManga } from '../../interfaces/respuesta-manga';
+import { DateF } from '../../pipes/dateF.pipe';
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './manga.component.html',
   styleUrls: ['./manga.component.css'],
   standalone: true,
-  imports: [CommonModule, FormsModule] // Agregar FormsModule para usar ngModel
+  imports: [CommonModule, FormsModule, DateF] // Agregar FormsModule para usar ngModel
 })
 export class MangaComponent implements OnInit {
   mangas: Manga[] = [];

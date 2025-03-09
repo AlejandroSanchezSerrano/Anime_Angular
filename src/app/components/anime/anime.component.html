@@ -16,7 +16,10 @@
                 <h5 class="card-title">
                   <a [href]="anime.url" target="_blank" class="text-decoration-none text-white w-75">{{ anime.title }}</a>
                 </h5>
-                <p class="sinop card-text mt-auto text-white text-opacity-75">Score: {{ anime.score }}</p>
+                <div class="mt-auto">
+                  <p class="sinop card-text text-white text-opacity-75">Puntuacion: {{ anime.score }}</p>
+                  <p class="sinop card-text text-white text-opacity-75">Ultimo Capitulo<br>{{ anime.aired.to | dateF }}</p>
+                </div>
               </div>
             </div>
           </div>

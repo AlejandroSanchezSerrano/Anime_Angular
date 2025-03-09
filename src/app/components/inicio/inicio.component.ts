@@ -7,13 +7,14 @@ import { Movie } from '../../interfaces/movie';
 import { RespuestaAnime } from '../../interfaces/respuesta-anime';
 import { RespuestaManga } from '../../interfaces/respuesta-manga';
 import { RespuestaMovie } from '../../interfaces/respuesta-movie';
+import { DateF } from '../../pipes/dateF.pipe';
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.css'],
   standalone: true, // Indicar que el componente es autónomo
-  imports: [CommonModule] // Importar CommonModule para usar NgFor
+  imports: [CommonModule, DateF] // Importar CommonModule para usar NgFor
 })
 export class InicioComponent implements OnInit {
   topAnimes: Anime[] = [];

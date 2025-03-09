@@ -16,7 +16,10 @@
                 <h5 class="card-title">
                   <a [href]="movie.url" target="_blank" class="text-decoration-none text-white w-75">{{ movie.title }}</a>
                 </h5>
-                <p class="card-text mt-auto text-white text-opacity-75">Score: {{ movie.score }}</p>
+                <div class="mt-auto">
+                  <p class="sinop card-text text-white text-opacity-75">Puntuacion: {{ movie.score }}</p>
+                  <p class="sinop card-text text-white text-opacity-75">Estreno<br>{{ movie.aired.from | dateF }}</p>
+                </div>
               </div>
             </div>
           </div>

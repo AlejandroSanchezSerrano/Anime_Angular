@@ -16,7 +16,10 @@
                 <h5 class="card-title d-flex justify-content-center">
                   <a [href]="manga.url" target="_blank" class="text-decoration-none text-white w-75 manga-title">{{ manga.title }}</a>
                 </h5>
-                <p class="card-text mt-auto text-white text-opacity-75">Score: {{ manga.score }}</p>
+                <div class="mt-auto">
+                  <p class="sinop card-text text-white text-opacity-75">Puntuacion: {{ manga.score }}</p>
+                  <p class="sinop card-text text-white text-opacity-75">Ultimo Tomo<br>{{ manga.published.to | dateF }}</p>
+                </div>
               </div>
             </div>
           </div>
