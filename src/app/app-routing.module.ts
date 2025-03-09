@@ -5,6 +5,7 @@ import { Error404Component } from './components/error404/error404.component';
 import { AnimeComponent } from './components/anime/anime.component';
 import { MangaComponent } from './components/manga/manga.component';
 import { MovieComponent } from './components/movie/movie.component';
+import { AcercaComponent } from './components/acerca/acerca.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'anime', component: AnimeComponent },
   { path: 'movie', component: MovieComponent },
   { path: 'manga', component: MangaComponent },
+  { path: 'acerca', component: AcercaComponent },
   { path: '**', component: Error404Component }
 ];
 
