@@ -11,8 +11,8 @@ const routes: Routes = [
   { path: 'anime', component: AnimeComponent },
   { path: 'movie', component: MovieComponent },
   { path: 'manga', component: MangaComponent },
-  { path: '', redirectTo: '/inicio', pathMatch: 'full' },
-  { path: '**', component: Error404Component }
+  { path: '**', component: Error404Component },
+  { path: '', redirectTo: '/inicio', pathMatch: 'full' }
 ];
 
 @NgModule({

@@ -29,7 +29,7 @@ export class JikanService {
     if (query === '') {
       return this.http.get<any>(`${this.baseUrl}/top/anime?type=tv&limit=15`);
     } else {
-      return this.http.get<any>(`${this.baseUrl}/anime?q=${query}&type=tv&limit=12`);
+      return this.http.get<any>(`${this.baseUrl}/anime?q=${query}&sfw=true&type=tv&limit=12`);
     }
   }
 
@@ -37,7 +37,7 @@ export class JikanService {
     if (query === '') {
       return this.http.get<any>(`${this.baseUrl}/top/manga?type=manga&limit=15`);
     } else {
-      return this.http.get<any>(`${this.baseUrl}/manga?q=${query}&type=manga&limit=12`);
+      return this.http.get<any>(`${this.baseUrl}/manga?q=${query}&sfw=true&type=manga&limit=12`);
     }
   }
 
@@ -45,7 +45,7 @@ export class JikanService {
     if (query === '') {
       return this.http.get<any>(`${this.baseUrl}/top/anime?type=movie&limit=15`);
     } else {
-      return this.http.get<any>(`${this.baseUrl}/anime?q=${query}&type=movie&limit=12`);
+      return this.http.get<any>(`${this.baseUrl}/anime?q=${query}&sfw=true&type=movie&limit=12`);
     }
   }
 }
