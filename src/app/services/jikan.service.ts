@@ -24,4 +24,12 @@ export class JikanService {
   getTopMovies() {
     return this.http.get<any>(`${this.baseUrl}/top/anime?type=movie&limit=5`);
   }
+
+  getAnimes(query: string) {
+    return this.http.get<any>(`${this.baseUrl}/anime?q=${query}&limit=10`);
+  }
+
+  // getMangas(query: string) {
+  //   return this.http.get<any>(`${this.baseUrl}/manga?q=${query}&limit=10`);
+  // }
 }

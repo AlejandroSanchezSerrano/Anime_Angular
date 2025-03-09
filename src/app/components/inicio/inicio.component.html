@@ -5,7 +5,7 @@
       <h1 class="text-center text-white">Top 5 Animes</h1>
       <div class="row justify-content-center">
         <div class="col-12 col-sm-6 col-md-4 col-lg-2 m-3" *ngFor="let anime of topAnimes">
-          <div class="card h-100 bg-black bg-opacity-50 p-3">
+          <div class="card h-100 bg-black bg-opacity-50 p-2">
             <div style="max-height: 300px; overflow: hidden;">
               <img [src]="anime.images.webp.large_image_url" class="card-img-top" alt="{{ anime.title }}" style="height: 250px; object-fit: cover;">
             </div>
@@ -25,7 +25,7 @@
       <h1 class="text-center text-white">Top 5 Películas</h1>
       <div class="row justify-content-center">
         <div class="col-12 col-sm-6 col-md-4 col-lg-2 m-3" *ngFor="let movie of topMovies">
-          <div class="card h-100 bg-black bg-opacity-50 p-3">
+          <div class="card h-100 bg-black bg-opacity-50 p-2">
             <div style="max-height: 300px; overflow: hidden;">
               <img [src]="movie.images.webp.large_image_url" class="card-img-top" alt="{{ movie.title }}" style="height: 250px; object-fit: cover;">
             </div>
@@ -45,7 +45,7 @@
       <h1 class="text-center text-white">Top 5 Mangas</h1>
       <div class="row justify-content-center">
         <div class="col-12 col-sm-6 col-md-4 col-lg-2 m-3" *ngFor="let manga of topMangas">
-          <div class="card h-100 bg-black bg-opacity-50 p-3">
+          <div class="card h-100 bg-black bg-opacity-50 p-2">
             <div style="max-height: 300px; overflow: hidden;">
               <img [src]="manga.images.webp.large_image_url" class="card-img-top" alt="{{ manga.title }}" style="height: 250px; object-fit: cover;">
             </div>
