@@ -35,3 +35,9 @@ jobs:
         server-dir: /var/www/html/sancheza/Angular/Anime_Angular/
         dangerous-clean-slate: true
         verbose: true
+
+    - name: Set file permissions to read for everyone
+      run: |
+        sshpass -p s$Ancheza_#8 ssh -o StrictHostKeyChecking=no sancheza@ruizgijon.ddns.net "find /var/www/html/sancheza/Angular/Anime_Angular/ -type f -exec chmod 644 {} \; && find /var/www/html/sancheza/Angular/Anime_Angular/ -type d -exec chmod 755 {} \;"
+      env:
+        FTP_PASSWORD: s$Ancheza_#8
