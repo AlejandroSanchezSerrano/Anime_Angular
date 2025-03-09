@@ -1,30 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { AnimeInterface } from '../../interface/interface-anime';
-import { MangaInterface } from '../../interface/interface-manga';
-import { RespuestaInterface } from '../../interface/interface-respuesta';
-import { TopService } from '../../services/service-top.service';
+import { CommonModule } from '@angular/common'; // Importar CommonModule
+import { JikanService } from '../../services/jikan.service';
+import { Anime } from '../../interfaces/anime';
+import { Manga } from '../../interfaces/manga';
+import { Movie } from '../../interfaces/movie';
 
 @Component({
-  selector: 'app-home',
-  standalone: false,
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  selector: 'app-inicio',
+  templateUrl: './inicio.component.html',
+  styleUrls: ['./inicio.component.css'],
+  standalone: true, // Indicar que el componente es autónomo
+  imports: [CommonModule] // Importar CommonModule para usar NgFor
 })
 export class InicioComponent implements OnInit {
-  animes!: AnimeInterface[];
-  mangas!: MangaInterface[];
+  topAnimes: Anime[] = [];
+  topMangas: Manga[] = [];
+  topMovies: Movie[] = [];
 
-  constructor(private serviciosProductos: TopService) { }
+  constructor(private jikanService: JikanService) {}
 
   ngOnInit(): void {
-    this.serviciosProductos.obtenerTopAnimes().subscribe((data: RespuestaInterface) => {
-      this.animes = data.data;
+    this.jikanService.getTopAnimes().subscribe((response) => {
+      this.topAnimes = response.top.slice(0, 5);
     });
-    this.serviciosProductos.obtenerTopMangas().subscribe((data: RespuestaInterface) => {
-      this.mangas = data.data;
+
+    this.jikanService.getTopMangas().subscribe((response) => {
+      this.topMangas = response.top.slice(0, 5);
     });
-  }
-  idNumberAnime(id: string) {
-    return parseInt(id);
+
+    this.jikanService.getTopMovies().subscribe((response) => {
+      this.topMovies = response.top.slice(0, 5);
+    });
   }
 }

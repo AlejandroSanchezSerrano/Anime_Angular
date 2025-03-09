@@ -1,49 +1,32 @@
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <h1 class="text-center">Bienvenido a Angular Manga, Dattebayo!!</h1>
-        </div>
-    </div>
-
-    <!-- TOP 5 ANIMES -->
-    <div class="row mt-4">
-        <div class="col-12">
-            <h2 class="text-center">Top 5 mejores Animes</h2>
-        </div>
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4">
-            <div class="col" *ngFor="let anime of animes; let i = index">
-                <div class="card h-100 d-flex flex-column">
-                    <div class="card-header">
-                        <h5 class="card-title text-center">#{{i+1}}</h5>
-                    </div>
-                    <img src="{{anime.images.webp.image_url}}" class="card-img-top" style="width: 100%; object-fit: cover; height: 300px;" alt="{{ anime.title }}">
-                    <div class="card-body flex-grow-1">
-                        <h5 class="card-title">{{anime.title}}</h5>
-                        <p class="card-text">{{ anime.synopsis }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- TOP 5 MANGAS -->
-    <div class="row mt-4">
-        <div class="col-12">
-            <h2 class="text-center">Top 5 mejores Mangas</h2>
-        </div>
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4">
-            <div class="col" *ngFor="let manga of mangas; let i = index">
-                <div class="card h-100 d-flex flex-column">
-                    <div class="card-header">
-                        <h5 class="card-title text-center">#{{i+1}}</h5>
-                    </div>
-                    <img src="{{manga.images.webp.image_url}}" class="card-img-top" style="width: 100%; height: 300px; object-fit: cover;" alt="{{ manga.title }}">
-                    <div class="card-body flex-grow-1">
-                        <h5 class="card-title">{{manga.title}}</h5>
-                        <p class="card-text">{{ manga.synopsis }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<div>
+    <h1>Top 5 Animes</h1>
+    <ul>
+      <li *ngFor="let anime of topAnimes">
+        <img [src]="anime.image_url" alt="{{ anime.title }}">
+        <a [href]="anime.url" target="_blank">{{ anime.title }}</a>
+        <p>Score: {{ anime.score }}</p>
+      </li>
+    </ul>
+  </div>
+  
+  <div>
+    <h1>Top 5 Mangas</h1>
+    <ul>
+      <li *ngFor="let manga of topMangas">
+        <img [src]="manga.image_url" alt="{{ manga.title }}">
+        <a [href]="manga.url" target="_blank">{{ manga.title }}</a>
+        <p>Score: {{ manga.score }}</p>
+      </li>
+    </ul>
+  </div>
+  
+  <div>
+    <h1>Top 5 Movies</h1>
+    <ul>
+      <li *ngFor="let movie of topMovies">
+        <img [src]="movie.image_url" alt="{{ movie.title }}">
+        <a [href]="movie.url" target="_blank">{{ movie.title }}</a>
+        <p>Score: {{ movie.score }}</p>
+      </li>
+    </ul>
+  </div>
