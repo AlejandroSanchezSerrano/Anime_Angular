@@ -4,6 +4,7 @@ import { JikanService } from '../../services/jikan.service';
 import { Anime } from '../../interfaces/anime';
 import { Manga } from '../../interfaces/manga';
 import { Movie } from '../../interfaces/movie';
+import { RespuestaAnime } from '../../interfaces/respuesta-anime';
 
 @Component({
   selector: 'app-inicio',
@@ -20,16 +21,16 @@ export class InicioComponent implements OnInit {
   constructor(private jikanService: JikanService) {}
 
   ngOnInit(): void {
-    this.jikanService.getTopAnimes().subscribe((response) => {
-      this.topAnimes = response.top.slice(0, 5);
+    this.jikanService.getTopAnimes().subscribe((response : RespuestaAnime) => {
+      this.topAnimes = response.data;
     });
 
-    this.jikanService.getTopMangas().subscribe((response) => {
-      this.topMangas = response.top.slice(0, 5);
+    this.jikanService.getTopMangas().subscribe((response : any) => {
+      this.topAnimes = response.data;
     });
 
-    this.jikanService.getTopMovies().subscribe((response) => {
-      this.topMovies = response.top.slice(0, 5);
+    this.jikanService.getTopMovies().subscribe((response : any) => {
+      this.topAnimes = response.data;
     });
   }
 }

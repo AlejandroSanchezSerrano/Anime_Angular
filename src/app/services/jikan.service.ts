@@ -9,19 +9,19 @@ import { Movie } from '../interfaces/movie';
   providedIn: 'root'
 })
 export class JikanService {
-  private baseUrl = 'https://api.jikan.moe/v3';
+  private baseUrl = 'https://api.jikan.moe/v4';
 
   constructor(private http: HttpClient) {}
 
-  getTopAnimes(): Observable<{ top: Anime[] }> {
-    return this.http.get<{ top: Anime[] }>(`${this.baseUrl}/top/anime/1`);
+  getTopAnimes() {
+    return this.http.get<any>(`${this.baseUrl}/top/anime?type=tv&limit=5`);
   }
 
-  getTopMangas(): Observable<{ top: Manga[] }> {
-    return this.http.get<{ top: Manga[] }>(`${this.baseUrl}/top/manga/1`);
+  getTopMangas() {
+    return this.http.get<any>(`${this.baseUrl}/top/manga?type=manga&limit=5`);
   }
 
-  getTopMovies(): Observable<{ top: Movie[] }> {
-    return this.http.get<{ top: Movie[] }>(`${this.baseUrl}/top/anime/1/movie`);
+  getTopMovies() {
+    return this.http.get<any>(`${this.baseUrl}/top/anime?type=movie&limit=5`);
   }
 }

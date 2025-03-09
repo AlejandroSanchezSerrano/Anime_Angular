@@ -2,7 +2,7 @@
     <h1>Top 5 Animes</h1>
     <ul>
       <li *ngFor="let anime of topAnimes">
-        <img [src]="anime.image_url" alt="{{ anime.title }}">
+        <img [src]="anime.images.webp.large_image_url" alt="{{ anime.title }}">
         <a [href]="anime.url" target="_blank">{{ anime.title }}</a>
         <p>Score: {{ anime.score }}</p>
       </li>
