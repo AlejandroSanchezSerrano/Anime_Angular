@@ -33,3 +33,4 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: dist/Anime_Angular/browser/
         server-dir: /sancheza/Angular/Anime_Angular/
+        verbose: true
