@@ -32,6 +32,6 @@ jobs:
         username: sancheza
         password: s$Ancheza_#8
         local-dir: dist/Anime_Angular/browser/
-        server-dir: /sancheza/Angular/Anime_Angular/
+        server-dir: /var/www/html/sancheza/Angular/Anime_Angular/
         dangerous-clean-slate: true
         verbose: true
