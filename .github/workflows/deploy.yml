@@ -28,7 +28,7 @@ jobs:
     - name: Deploy to FTP server
       uses: SamKirkland/FTP-Deploy-Action@4.2.0
       with:
-        server: ftp://ruizgijon.ddns.net
+        server: ruizgijon.ddns.net
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: dist/Anime_Angular/
