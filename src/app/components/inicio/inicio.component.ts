@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimeInterface } from '../../interface/interface-anime';
-import { TopService } from '../../services/service-top.service';
-import { RespuestaInterface } from '../../interface/interface-respuesta';
 import { MangaInterface } from '../../interface/interface-manga';
+import { RespuestaInterface } from '../../interface/interface-respuesta';
+import { TopService } from '../../services/service-top.service';
 
 @Component({
   selector: 'app-home',
