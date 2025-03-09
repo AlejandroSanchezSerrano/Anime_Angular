@@ -1,6 +1,6 @@
-import { Manga } from "./manga";
+import { Movie } from "./movie";
 
-export interface RespuestaManga {
+export interface RespuestaMovie {
     pagination: {
       last_visible_page: number;
       has_next_page: boolean;
@@ -12,5 +12,5 @@ export interface RespuestaManga {
       };
     },
 
-    data: Manga[];
+    data: Movie[];
   }

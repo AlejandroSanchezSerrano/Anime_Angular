@@ -1,32 +1,57 @@
-<div>
-    <h1>Top 5 Animes</h1>
-    <ul>
-      <li *ngFor="let anime of topAnimes">
-        <img [src]="anime.images.webp.large_image_url" alt="{{ anime.title }}">
-        <a [href]="anime.url" target="_blank">{{ anime.title }}</a>
-        <p>Score: {{ anime.score }}</p>
-      </li>
-    </ul>
+<div class="container mt-4">
+  <div class="row">
+    <!-- Top 5 Animes -->
+    <div class="col-12 mb-4">
+      <h1 class="text-center">Top 5 Animes</h1>
+      <div class="d-flex justify-content-center">
+        <div class="col-md-2 m-3" *ngFor="let anime of topAnimes">
+          <div class="card h-100">
+            <img [src]="anime.images.webp.large_image_url" class="card-img-top" alt="{{ anime.title }}" style="max-height: 300px;">
+            <div class="d-flex flex-column card-body text-center">
+              <h5 class="card-title">
+                <a [href]="anime.url" target="_blank" class="text-decoration-none">{{ anime.title }}</a>
+              </h5>
+              <p class="card-text mt-auto">Score: {{ anime.score }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Top 5 Peliculas -->
+    <div class="col-12 mb-4">
+      <h1 class="text-center">Top 5 Películas</h1>
+      <div class="d-flex justify-content-center">
+        <div class="col-md-2 m-3" *ngFor="let movie of topMovies">
+          <div class="card h-100">
+            <img [src]="movie.images.webp.large_image_url" class="card-img-top object-fit-cover" alt="{{ movie.title }}" style="max-height: 300px;">
+            <div class="d-flex flex-column card-body text-center">
+              <h5 class="card-title">
+                <a [href]="movie.url" target="_blank" class="text-decoration-none">{{ movie.title }}</a>
+              </h5>
+              <p class="mt-auto card-text">Score: {{ movie.score }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Top 5 Mangas -->
+    <div class="col-12 mb-4">
+      <h1 class="text-center">Top 5 Mangas</h1>
+      <div class="d-flex justify-content-center">
+        <div class="col-md-2 m-3" *ngFor="let manga of topMangas">
+          <div class="card h-100">
+            <img [src]="manga.images.webp.large_image_url" class="card-img-top object-fit-cover" alt="{{ manga.title }}" style="max-height: 300px;">
+            <div class="d-flex flex-column card-body text-center">
+              <h5 class="card-title">
+                <a [href]="manga.url" target="_blank" class="text-decoration-none">{{ manga.title }}</a>
+              </h5>
+              <p class="mt-auto card-text">Score: {{ manga.score }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  
-  <div>
-    <h1>Top 5 Mangas</h1>
-    <ul>
-      <li *ngFor="let manga of topMangas">
-        <img [src]="manga.image_url" alt="{{ manga.title }}">
-        <a [href]="manga.url" target="_blank">{{ manga.title }}</a>
-        <p>Score: {{ manga.score }}</p>
-      </li>
-    </ul>
-  </div>
-  
-  <div>
-    <h1>Top 5 Movies</h1>
-    <ul>
-      <li *ngFor="let movie of topMovies">
-        <img [src]="movie.image_url" alt="{{ movie.title }}">
-        <a [href]="movie.url" target="_blank">{{ movie.title }}</a>
-        <p>Score: {{ movie.score }}</p>
-      </li>
-    </ul>
-  </div>
+</div>

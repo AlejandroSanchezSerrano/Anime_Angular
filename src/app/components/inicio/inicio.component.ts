@@ -5,6 +5,8 @@ import { Anime } from '../../interfaces/anime';
 import { Manga } from '../../interfaces/manga';
 import { Movie } from '../../interfaces/movie';
 import { RespuestaAnime } from '../../interfaces/respuesta-anime';
+import { RespuestaManga } from '../../interfaces/respuesta-manga';
+import { RespuestaMovie } from '../../interfaces/respuesta-movie';
 
 @Component({
   selector: 'app-inicio',
@@ -25,12 +27,12 @@ export class InicioComponent implements OnInit {
       this.topAnimes = response.data;
     });
 
-    this.jikanService.getTopMangas().subscribe((response : any) => {
-      this.topAnimes = response.data;
+    this.jikanService.getTopMangas().subscribe((response : RespuestaManga) => {
+      this.topMangas = response.data;
     });
 
-    this.jikanService.getTopMovies().subscribe((response : any) => {
-      this.topAnimes = response.data;
+    this.jikanService.getTopMovies().subscribe((response : RespuestaMovie) => {
+      this.topMovies = response.data;
     });
   }
 }
