@@ -31,5 +31,5 @@ jobs:
         server: ruizgijon.ddns.net
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: dist/Anime_Angular/
+        local-dir: dist/Anime_Angular/browser/
         server-dir: /sancheza/Angular/Anime_Angular/
