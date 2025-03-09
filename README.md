@@ -16,11 +16,13 @@ Este proyecto es una aplicación web desarrollada con Angular que permite a los 
 
 A continuación se presentan las rutas principales de la aplicación:
 
-- `/home`: Página principal que muestra una lista de animes destacados.
-- `/animes`: Página que muestra un listado completo de animes disponibles.
-- `/animes/:id`: Página de detalles de un anime específico, donde `:id` es el identificador del anime.
-- `/search`: Página con un formulario de búsqueda para encontrar animes por nombre o género.
-- `/about`: Página con información sobre el proyecto y el desarrollador.
+- '' --> '/inicio'
+- 'inicio' --> Inicio
+- '/anime' --> Busqueda de Anime
+- '/movie' --> Busqueda de Pelicula
+- '/manga' --> Busqueda de Manga
+- '/acerca' --> Acerca De
+- '/**' --> Error 404
 
 ## Workflow
 

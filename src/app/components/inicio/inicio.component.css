@@ -38,7 +38,7 @@ img {
 
 @media (min-width: 992px) { /* Escritorio */
   .img-container img {
-    height: 250px;
+    height: 350px;
     object-fit: cover;
   }
 }

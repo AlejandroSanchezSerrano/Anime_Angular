@@ -9,12 +9,12 @@ import { AcercaComponent } from './components/acerca/acerca.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
-  { path: '/inicio', component: InicioComponent },
-  { path: '/anime', component: AnimeComponent },
-  { path: '/movie', component: MovieComponent },
-  { path: '/manga', component: MangaComponent },
-  { path: '/acerca', component: AcercaComponent },
-  { path: '/**', component: Error404Component }
+  { path: 'inicio', component: InicioComponent },
+  { path: 'anime', component: AnimeComponent },
+  { path: 'movie', component: MovieComponent },
+  { path: 'manga', component: MangaComponent },
+  { path: 'acerca', component: AcercaComponent },
+  { path: '**', component: Error404Component }
 ];
 
 @NgModule({
