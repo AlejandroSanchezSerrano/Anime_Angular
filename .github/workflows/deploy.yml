@@ -27,10 +27,19 @@ jobs:
     - name: Deploy to FTP server
       uses: SamKirkland/FTP-Deploy-Action@4.2.0
       with:
-        server: ruizgijon.ddns.net
+        server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PASS }}
         local-dir: dist/Anime_Angular/browser/
         server-dir: /var/www/html/sancheza/Angular/Anime_Angular/
         dangerous-clean-slate: true
         verbose: true
+
+    - name: Set file permissions on server
+      uses: appleboy/ssh-action@v0.1.5
+      with:
+        host: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USER }}
+        password: ${{ secrets.FTP_PASS }}
+        script: |
+          find www/Angular/Anime_Angular -type f -exec chmod 755 {} \;
