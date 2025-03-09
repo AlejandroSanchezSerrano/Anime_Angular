@@ -25,13 +25,19 @@ jobs:
     - name: Build Angular app
       run: npm run build -- --base-href=https://ruizgijon.ddns.net/sancheza/Angular/Anime_Angular/
 
-    - name: Deploy to FTP server
-      uses: SamKirkland/FTP-Deploy-Action@4.2.0
-      with:
-        server: ruizgijon.ddns.net
-        username: sancheza
-        password: s$Ancheza_#8
-        local-dir: dist/Anime_Angular/browser/
-        server-dir: /var/www/html/sancheza/Angular/Anime_Angular/
-        dangerous-clean-slate: true
-        verbose: true
+    - name: Install lftp
+      run: sudo apt-get install -y lftp
+
+    - name: Deploy to FTP server with permissions
+      env:
+        FTP_SERVER: ruizgijon.ddns.net
+        FTP_USERNAME: sancheza
+        FTP_PASSWORD: s$Ancheza_#8
+        LOCAL_DIR: dist/Anime_Angular/browser/
+        SERVER_DIR: /var/www/html/sancheza/Angular/Anime_Angular/
+      run: |
+        lftp -c "
+        set ftp:ssl-allow no;
+        open ftp://$FTP_USERNAME:$FTP_PASSWORD@$FTP_SERVER;
+        mirror -R --chmod=755 $LOCAL_DIR $SERVER_DIR
+        "
