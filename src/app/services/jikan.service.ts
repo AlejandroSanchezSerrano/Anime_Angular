@@ -29,11 +29,15 @@ export class JikanService {
     if (query === '') {
       return this.http.get<any>(`${this.baseUrl}/top/anime?type=tv&limit=15`);
     } else {
-      return this.http.get<any>(`${this.baseUrl}/anime?q=${query}&limit=15`);
+      return this.http.get<any>(`${this.baseUrl}/anime?q=${query}&type=tv&limit=10`);
     }
   }
 
-  // getMangas(query: string) {
-  //   return this.http.get<any>(`${this.baseUrl}/manga?q=${query}&limit=10`);
-  // }
+  getMangas(query: string) {
+    if (query === '') {
+      return this.http.get<any>(`${this.baseUrl}/top/manga?type=manga&limit=15`);
+    } else {
+      return this.http.get<any>(`${this.baseUrl}/manga?q=${query}&type=manga&limit=10`);
+    }
+  }
 }
