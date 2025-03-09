@@ -26,7 +26,11 @@ export class JikanService {
   }
 
   getAnimes(query: string) {
-    return this.http.get<any>(`${this.baseUrl}/anime?q=${query}&limit=10`);
+    if (query === '') {
+      return this.http.get<any>(`${this.baseUrl}/top/anime?type=tv&limit=15`);
+    } else {
+      return this.http.get<any>(`${this.baseUrl}/anime?q=${query}&limit=15`);
+    }
   }
 
   // getMangas(query: string) {
