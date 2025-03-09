@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   correo = 'alejandro.sanchez-serrano@iesruizgijon.com';
+
+  //Se tiene pensado meterle lógica mas adelante.
+  usuarioLogueado = true; 
+  nombreUsuario = 'Alejandro';
 }

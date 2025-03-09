@@ -28,6 +28,9 @@
 </header>
 
 <main class="py-4">
+  <div *ngIf="usuarioLogueado" class="text-center text-white" role="alert">
+    <h2>Bienvenido, {{ nombreUsuario }}!</h2>
+  </div>
   <router-outlet></router-outlet>
 </main>
 
