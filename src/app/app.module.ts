@@ -1,27 +1,27 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { provideHttpClient } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { ListadoClienteComponent } from './listado-cliente/listado-cliente.component';
-import { ListadoProductosComponent } from './listado-productos/listado-productos.component';
-import { Error404Component } from './error404/error404.component';
-import { provideHttpClient } from '@angular/common/http';
-// import { HttpClientModule } from '@angular/common/http';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { Error404Component } from './components/error404/error404.component';
+import { AnimeComponent } from './components/anime/anime.component';
+import { MangaComponent } from './components/manga/manga.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    ListadoClienteComponent,
-    ListadoProductosComponent,
-    Error404Component
+    Error404Component,
+    InicioComponent,
+    AnimeComponent,
+    MangaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // HttpClientModule
+    FormsModule,
   ],
   providers: [
     provideHttpClient()

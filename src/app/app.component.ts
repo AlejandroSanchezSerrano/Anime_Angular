@@ -7,6 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'prueba-ruting';
-  email='contacto@empresa.com';
+  correo = 'alejandro.sanchez-serrano@iesruizgijon.com';
 }

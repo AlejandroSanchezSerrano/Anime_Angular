@@ -1,25 +1,30 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { Error404Component } from './error404/error404.component';
-import { ListadoProductosComponent } from './listado-productos/listado-productos.component';
-import { ListadoClienteComponent } from './listado-cliente/listado-cliente.component';
+import { Error404Component } from './components/error404/error404.component';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { AnimeComponent } from './components/anime/anime.component';
+import { MangaComponent } from './components/manga/manga.component';
 
 const routes: Routes = [
   {
-    path: 'home',
-    component: HomeComponent,
+    path: 'inicio',
+    component: InicioComponent,
   },
   {
-    path: 'listado-productos',
-    component: ListadoProductosComponent,
+    path: 'anime',
+    component: AnimeComponent,
   },
   {
-    path: 'listado-cliente',
-    component: ListadoClienteComponent,
+    path: 'manga',
+    component: MangaComponent,
   },
   {
-    path: '**', component: Error404Component
+    path: '',
+    component: InicioComponent,
+  },
+  {
+    path: '**',
+    component: Error404Component
   }
 ];
 
