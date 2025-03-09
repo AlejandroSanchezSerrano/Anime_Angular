@@ -2,3 +2,15 @@ main {
     background: url('https://res.cloudinary.com/drikoem6d/image/upload/v1741520062/bg_bdumvi.gif') no-repeat center center fixed, #1a1a1a;
     background-size: cover;
 }
+
+a {
+    transition: all 200ms linear;
+}
+
+a:hover {
+    font-weight: bold;
+}
+
+.nav-link.active {
+    font-weight: bold;
+}

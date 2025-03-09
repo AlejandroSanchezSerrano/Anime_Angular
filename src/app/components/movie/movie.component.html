@@ -1,0 +1,30 @@
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-12 mb-4">
+        <input [(ngModel)]="query" (input)="getMovies()" class="form-control" placeholder="Search...">
+      </div>
+  
+      <div class="col-12 mb-4">
+        <h1 class="text-center text-white">Busqueda de Pelicula</h1>
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-7 col-md-4 col-lg-2 m-2" *ngFor="let movie of movies">
+            <div class="card h-100 bg-black bg-opacity-50 p-2">
+              <div style="max-height: 300px; overflow: hidden;">
+                <img [src]="movie.images.webp.large_image_url" class="card-img-top" alt="{{ movie.title }}" style="height: 250px; object-fit: cover;">
+              </div>
+              <div class="d-flex flex-column card-body text-center">
+                <h5 class="card-title">
+                  <a [href]="movie.url" target="_blank" class="text-decoration-none text-white w-75">{{ movie.title }}</a>
+                </h5>
+                <p class="card-text mt-auto text-white text-opacity-75">Score: {{ movie.score }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- <div class="col-12 mb-4" *ngIf="results.length === 0 && query">
+        <p class="text-center text-white">No results found</p>
+      </div> -->
+    </div>
+  </div>

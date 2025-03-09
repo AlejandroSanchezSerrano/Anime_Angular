@@ -40,4 +40,12 @@ export class JikanService {
       return this.http.get<any>(`${this.baseUrl}/manga?q=${query}&type=manga&limit=10`);
     }
   }
+
+  getMovies(query: string) {
+    if (query === '') {
+      return this.http.get<any>(`${this.baseUrl}/top/anime?type=movie&limit=15`);
+    } else {
+      return this.http.get<any>(`${this.baseUrl}/anime?q=${query}&type=movie&limit=10`);
+    }
+  }
 }
