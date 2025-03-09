@@ -14,3 +14,7 @@ a:hover {
 .nav-link.active {
     font-weight: bold;
 }
+
+.navbar-nav.ms-auto {
+    margin-left: auto;
+}
