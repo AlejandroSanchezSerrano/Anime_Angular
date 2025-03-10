@@ -16,7 +16,7 @@ Este proyecto es una aplicación web desarrollada con Angular que permite a los 
 
 A continuación se presentan las rutas principales de la aplicación:
 
-- '' --> '/inicio'
+- '' --> '/inicio' 
 - 'inicio' --> Inicio
 - 'anime' --> Busqueda de Anime
 - 'movie' --> Busqueda de Pelicula
