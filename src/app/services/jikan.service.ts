@@ -16,15 +16,12 @@ export class JikanService {
   getTopAnimes() {
     return this.http.get<any>(`${this.baseUrl}/top/anime?type=tv&limit=5`);
   }
-
   getTopMangas() {
     return this.http.get<any>(`${this.baseUrl}/top/manga?type=manga&limit=5`);
   }
-
   getTopMovies() {
     return this.http.get<any>(`${this.baseUrl}/top/anime?type=movie&limit=5`);
   }
-
   getAnimes(query: string) {
     if (query === '') {
       return this.http.get<any>(`${this.baseUrl}/top/anime?type=tv&limit=12`);
@@ -32,7 +29,6 @@ export class JikanService {
       return this.http.get<any>(`${this.baseUrl}/anime?q=${query}&sfw=true&type=tv&limit=12`);
     }
   }
-
   getMangas(query: string) {
     if (query === '') {
       return this.http.get<any>(`${this.baseUrl}/top/manga?type=manga&limit=12`);
@@ -40,7 +36,6 @@ export class JikanService {
       return this.http.get<any>(`${this.baseUrl}/manga?q=${query}&sfw=true&type=manga&limit=12`);
     }
   }
-
   getMovies(query: string) {
     if (query === '') {
       return this.http.get<any>(`${this.baseUrl}/top/anime?type=movie&limit=12`);
