@@ -18,11 +18,11 @@ A continuación se presentan las rutas principales de la aplicación:
 
 - '' --> '/inicio'
 - 'inicio' --> Inicio
-- '/anime' --> Busqueda de Anime
-- '/movie' --> Busqueda de Pelicula
-- '/manga' --> Busqueda de Manga
-- '/acerca' --> Acerca De
-- '/**' --> Error 404
+- 'anime' --> Busqueda de Anime
+- 'movie' --> Busqueda de Pelicula
+- 'manga' --> Busqueda de Manga
+- 'acerca' --> Acerca De
+- '**' --> Error 404
 
 ## Workflow
 
