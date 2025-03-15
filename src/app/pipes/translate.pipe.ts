@@ -14,8 +14,8 @@ export class TranslatePipe implements PipeTransform {
       return of('');
     }
 
-    // Limitar a 500 palabras
-    const limitedText = this.limitTo500Words(value);
+    // Limitar a 500 caracteres
+    const limitedText = this.limitTo500Chars(value);
 
     const apiUrl = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(limitedText)}&langpair=en|${targetLang}`;
 
@@ -34,10 +34,9 @@ export class TranslatePipe implements PipeTransform {
     );
   }
 
-  private limitTo500Words(text: string): string {
-    const words = text.split(' ');
-    if (words.length > 20) {
-      return words.slice(0, 500).join(' ');
+  private limitTo500Chars(text: string): string {
+    if (text.length > 500) {
+      return text.substring(0, 500);
     }
     return text;
   }

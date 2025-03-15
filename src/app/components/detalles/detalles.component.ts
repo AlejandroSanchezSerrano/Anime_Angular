@@ -4,13 +4,15 @@ import { ActivatedRoute } from '@angular/router';
 import { JikanService } from '../../services/jikan.service';
 import { Anime } from '../../interfaces/anime';
 import { TranslatePipe } from '../../pipes/translate.pipe';
+import { DurationPipe } from '../../pipes/duration.pipe';
+import { DateRangePipe } from '../../pipes/date-range.pipe';
 
 @Component({
   selector: 'app-detalles',
   templateUrl: './detalles.component.html',
   styleUrls: ['./detalles.component.css'],
   standalone: true,
-  imports: [CommonModule, TranslatePipe]
+  imports: [CommonModule, TranslatePipe, DurationPipe, DateRangePipe]
 })
 export class DetallesComponent implements OnInit {
   anime: Anime | undefined;

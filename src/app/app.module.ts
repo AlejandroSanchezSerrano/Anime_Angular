@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DetallesComponent } from './components/detalles/detalles.component';
 import { TranslatePipe } from './pipes/translate.pipe';
+import { DurationPipe } from './pipes/duration.pipe';
+import { DateRangePipe } from './pipes/date-range.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { TranslatePipe } from './pipes/translate.pipe';
     AppRoutingModule,
     HttpClientModule,
     DetallesComponent,
-    TranslatePipe
+    TranslatePipe,
+    DurationPipe,
+    DateRangePipe
   ],
   providers: [],
   bootstrap: [AppComponent]
