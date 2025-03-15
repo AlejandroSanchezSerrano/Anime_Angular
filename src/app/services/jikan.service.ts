@@ -43,4 +43,7 @@ export class JikanService {
       return this.http.get<any>(`${this.baseUrl}/anime?q=${query}&sfw=true&type=movie&limit=12`);
     }
   }
+  getAnimeById(id: number): Observable<Anime> {
+    return this.http.get<Anime>(`${this.baseUrl}/anime/${id}`);
+  }
 }

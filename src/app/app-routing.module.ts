@@ -7,6 +7,7 @@ import { MangaComponent } from './components/manga/manga.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { AcercaComponent } from './components/acerca/acerca.component';
 import { PokemonComponent } from './components/pokemon/pokemon.component';
+import { DetallesComponent } from './components/detalles/detalles.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'movie', component: MovieComponent },
   { path: 'manga', component: MangaComponent },
   { path: 'acerca', component: AcercaComponent },
+  { path: 'detalles/:id', component: DetallesComponent }, 
   { path: '**', component: Error404Component }
 ];
 

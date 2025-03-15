@@ -1,0 +1,6 @@
+<div *ngIf="anime">
+    <h1>{{ anime.title }}</h1>
+    <img [src]="anime.images.webp.image_url" alt="{{ anime.title }}">
+    <p>{{ anime.synopsis }}</p>
+    <!-- Puedes agregar más detalles aquí -->
+  </div>
