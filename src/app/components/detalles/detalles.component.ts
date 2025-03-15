@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { JikanService } from '../../services/jikan.service';
 import { Anime } from '../../interfaces/anime';
+import { TranslatePipe } from '../../pipes/translate.pipe';
 
 @Component({
   selector: 'app-detalles',
   templateUrl: './detalles.component.html',
   styleUrls: ['./detalles.component.css'],
   standalone: true,
-  imports: [CommonModule]
+  imports: [CommonModule, TranslatePipe]
 })
 export class DetallesComponent implements OnInit {
   anime: Anime | undefined;

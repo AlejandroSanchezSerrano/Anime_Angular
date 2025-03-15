@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DetallesComponent } from './components/detalles/detalles.component';
+import { TranslatePipe } from './pipes/translate.pipe';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { DetallesComponent } from './components/detalles/detalles.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    DetallesComponent
+    DetallesComponent,
+    TranslatePipe
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,15 +1,28 @@
 .sinopsis {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    transition: all 0.5s ease-in-out;
-    max-height: 3em;
+  /* display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical; */
+  overflow: hidden;
+  transition: all 1s ease-in-out;
+  max-height: 3em;
+  height: 3em;
+  interpolate-size: allow-keywords;
 }
 
 .sinopsis:hover {
-    -webkit-line-clamp: 40;
-      line-clamp: 40;
-      max-height: 40em;
+  /* -webkit-line-clamp: 40;
+  line-clamp: 40; */
+  max-height: 40em;
+  height: auto;
+}
+
+/* Transición suave para el blur */
+.anime-img {
+  transition: filter 0.5s ease-in-out;
+}
+
+/* Aplica blur cuando se pase el ratón sobre la sinopsis */
+.sinopsis:hover ~ .image-container .anime-img {
+  filter: blur(200px);
 }
