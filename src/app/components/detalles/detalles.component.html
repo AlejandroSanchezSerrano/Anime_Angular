@@ -1,6 +1,24 @@
-<div *ngIf="anime">
-    <h1>{{ anime.title }}</h1>
-    <img [src]="anime.images.webp.image_url" alt="{{ anime.title }}">
-    <p>{{ anime.synopsis }}</p>
-    <!-- Puedes agregar más detalles aquí -->
-  </div>
+<div *ngIf="anime" class="container mt-5">
+    <div class="card bg-black text-white bg-opacity-75">
+        <div class="row g-0">
+        <div class="col-md-4">
+            <img [src]="anime.images?.webp?.large_image_url" class="img-fluid rounded-start" alt="{{ anime.title }}">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+            <h2 class="card-title">{{ anime.title }}</h2>
+            <p class="card-text"><strong>Título en Japonés:</strong> {{ anime.title_japanese }}</p>
+            <p class="card-text"><strong>Episodios:</strong> {{ anime.episodes }}</p>
+            <p class="card-text"><strong>Puntuación:</strong> {{ anime.score }}</p>
+            <p class="card-text"><strong>Estado:</strong> {{ anime.status }}</p>
+            <p class="card-text"><strong>Estrenado:</strong> {{ anime.aired.string }}</p>
+            <p class="card-text"><strong>Duración:</strong> {{ anime.duration }}</p>
+            <p class="card-text"><strong>Clasificación:</strong> {{ anime.rating }}</p>
+            <p class="card-text sinopsis"><strong>Sinopsis:</strong> {{ anime.synopsis }}</p>
+            <p class="card-text"><strong>Estudios:</strong> {{ studios }}</p>
+            <p class="card-text"><strong>Géneros:</strong> {{ genres }}</p>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

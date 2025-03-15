@@ -13,18 +13,22 @@ import { Anime } from '../../interfaces/anime';
 })
 export class DetallesComponent implements OnInit {
   anime: Anime | undefined;
+  producers: string = '';
+  studios: string = '';
+  genres: string = '';
 
   constructor(private route: ActivatedRoute, private jikanService: JikanService) {}
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    console.log('Anime ID:', id); // Depuración
     if (id) {
       this.jikanService.getAnimeById(+id).subscribe((anime: Anime) => {
-        console.log('Anime Data:', anime); // Depuración
         this.anime = anime;
+        this.producers = anime.producers?.map(producer => producer.name).join(', ') || '';
+        this.studios = anime.studios?.map(studio => studio.name).join(', ') || '';
+        this.genres = anime.genres?.map(genre => genre.name).join(', ') || '';
       }, error => {
-        console.error('Error fetching anime data:', error); // Depuración
+        console.error('Error fetching anime data:', error);
       });
     }
   }
