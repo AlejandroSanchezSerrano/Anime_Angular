@@ -14,7 +14,7 @@
             </div>
             <div id="info" class="a d-flex flex-column justify-content-center align-items-center align-content-center card-body text-center">
               <h6 class="card-title">
-                <a [href]="movie.url" target="_blank" class="text-decoration-none text-white">{{ movie.title }}</a>
+                <a [routerLink]="['/detalles/anime', movie.mal_id]" class="text-decoration-none text-white">{{ movie.title }}</a>
               </h6>
               <div class="mt-auto">
                 <p class="sinop card-text text-white text-opacity-75">Puntuacion: {{ movie.score }}</p>

@@ -40,3 +40,8 @@
 .ofimg img:hover {
   scale: 1.1;
 }
+
+.trailer-container {
+  overflow: hidden; /* Evita que se salga el contenido */
+  border-radius: 20px; /* Ajusta el valor según quieras más o menos redondeado */
+}

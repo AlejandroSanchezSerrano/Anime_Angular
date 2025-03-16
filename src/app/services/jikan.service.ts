@@ -48,4 +48,10 @@ export class JikanService {
       map(response => response.data) // Mapear para extraer los datos de la propiedad 'data'
     );
   }
+
+  getMangaById(id: number): Observable<Manga> {
+    return this.http.get<any>(`${this.baseUrl}/manga/${id}`).pipe(
+      map(response => response.data) // Mapear para extraer los datos de la propiedad 'data'
+    );
+  }
 }

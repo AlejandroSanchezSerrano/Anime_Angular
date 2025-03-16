@@ -15,11 +15,42 @@
                     <p class="card-text"><strong>Estrenado:</strong> {{ anime.aired.string | dateRange }}</p>
                     <p class="card-text"><strong>Duración:</strong> {{ anime.duration | duration }}</p>
                     <p class="card-text"><strong>Clasificación:</strong> {{ anime.rating }}</p>
-                    <p class="card-text sinopsis"><strong>Sinopsis:</strong> {{ anime.synopsis }} 
+                    <p class="card-text sinopsis"><strong>Sinopsis:</strong> {{ anime.synopsis }}</p>
                     <p class="card-text"><strong>Estudios:</strong> {{ studios }}</p>
                     <p class="card-text"><strong>Géneros:</strong> {{ genres }}</p>
                 </div>
             </div>
         </div>
     </div>
+    <div *ngIf="trailerUrl" class="mt-5 rounded trailer-container">
+        <iframe [src]="trailerUrl" width="100%" height="600" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>     
+</div>
+
+<div *ngIf="manga" class="container mt-5">
+    <div class="card bg-black text-white bg-opacity-75 border-5">
+        <div class="row g-0">
+            <div class="ofimg col-md-4 image-container">
+                <img [src]="manga.images.webp.large_image_url" class="img-fluid rounded-start object-fit-cover anime-img" alt="{{ manga.title }}">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h2 class="card-title">{{ manga.title }}</h2>
+                    <h5 class="car-titled">Ranking: #{{manga.rank}}</h5>
+                    <p class="card-text"><strong>Título en Japonés:</strong> {{ manga.title_japanese }}</p>
+                    <p class="card-text"><strong>Puntuación:</strong> {{ manga.score }}</p>
+                    <p class="card-text"><strong>Estado:</strong> {{ manga.status }}</p>
+                    <!-- <p class="card-text"><strong>Estrenado:</strong> {{ manga.aired.string | dateRange }}</p> -->
+                    <!-- <p class="card-text"><strong>Duración:</strong> {{ manga.duration | duration }}</p> -->
+                    <!-- <p class="card-text"><strong>Clasificación:</strong> {{ manga.rating }}</p> -->
+                    <p class="card-text sinopsis"><strong>Sinopsis:</strong> {{ manga.synopsis }}</p>
+                    <p class="card-text"><strong>Estudios:</strong> {{ studios }}</p>
+                    <p class="card-text"><strong>Géneros:</strong> {{ genres }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="trailerUrl" class="mt-5 rounded trailer-container">
+        <iframe [src]="trailerUrl" width="100%" height="600" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>     
 </div>
