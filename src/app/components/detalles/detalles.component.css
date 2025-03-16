@@ -26,3 +26,17 @@
 .sinopsis:hover ~ .image-container .anime-img {
   filter: blur(200px);
 }
+
+.ofimg {
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.ofimg img {
+  width: 100% !important;
+  transition: all 0.5s ease;
+}
+
+.ofimg img:hover {
+  scale: 1.1;
+}

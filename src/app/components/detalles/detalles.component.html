@@ -1,7 +1,7 @@
 <div *ngIf="anime" class="container mt-5">
     <div class="card bg-black text-white bg-opacity-75 border-5">
         <div class="row g-0">
-            <div class="col-md-4 image-container">
+            <div class="ofimg col-md-4 image-container">
                 <img [src]="anime.images.webp.large_image_url" class="img-fluid rounded-start object-fit-cover anime-img" alt="{{ anime.title }}">
             </div>
             <div class="col-md-8">
@@ -11,13 +11,13 @@
                     <p class="card-text"><strong>Título en Japonés:</strong> {{ anime.title_japanese }}</p>
                     <p class="card-text"><strong>Episodios:</strong> {{ anime.episodes }}</p>
                     <p class="card-text"><strong>Puntuación:</strong> {{ anime.score }}</p>
-                    <p class="card-text"><strong>Estado:</strong> {{ anime.status | translate:'es' | async }}</p>
+                    <p class="card-text"><strong>Estado:</strong> {{ anime.status }}</p>
                     <p class="card-text"><strong>Estrenado:</strong> {{ anime.aired.string | dateRange }}</p>
                     <p class="card-text"><strong>Duración:</strong> {{ anime.duration | duration }}</p>
-                    <p class="card-text"><strong>Clasificación:</strong> {{ anime.rating | translate:'es' | async }}</p>
-                    <p class="card-text sinopsis"><strong>Sinopsis:</strong> {{ anime.synopsis | translate:'es' | async }}
+                    <p class="card-text"><strong>Clasificación:</strong> {{ anime.rating }}</p>
+                    <p class="card-text sinopsis"><strong>Sinopsis:</strong> {{ anime.synopsis }} 
                     <p class="card-text"><strong>Estudios:</strong> {{ studios }}</p>
-                    <p class="card-text"><strong>Géneros:</strong> {{ genres | translate:'es' | async }}</p>
+                    <p class="card-text"><strong>Géneros:</strong> {{ genres }}</p>
                 </div>
             </div>
         </div>
